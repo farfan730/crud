@@ -22,7 +22,8 @@
         <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
         <br />
         <br />
-        <asp:Button ID="Button_insert" runat="server" Text="Insert" />
+        <asp:Button ID="Button_insert" runat="server" OnClick="Button_insert_Click" 
+            Text="Insert" />
     
     </div>
     </form>
