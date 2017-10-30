@@ -28,17 +28,23 @@ public partial class home : System.Web.UI.Page
         TextBox3.Text = "";
 
         //desde aqui empezamos a llamar metos
-        
+        cargarLista();
     }
 
+    //metodos
+    public void cargarLista() {
 
+        con.Open();
+        cmd.CommandText = "select * from clientes";
+        //data reader
+        dr = cmd.ExecuteReader();
 
-    public void cargar() {
-
-    }
-
-
-
-
-
+        if (dr.HasRows) {
+            while (dr.Read()) {
+                ListBox1.Items.Add(dr[0].ToString());
+                ListBox2.Items.Add(dr[1].ToString());
+            }
+        }
+        con.Close();
+    }    
 }

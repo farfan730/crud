@@ -14,9 +14,15 @@
         <br />
         <asp:Label ID="Label1" runat="server" Text="Nombre"></asp:Label>
         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+        <asp:ListBox ID="ListBox1" runat="server"></asp:ListBox>
+        <br />
+        <br />
         <br />
         <asp:Label ID="Label2" runat="server" Text="Apellido"></asp:Label>
         <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+        <asp:ListBox ID="ListBox2" runat="server"></asp:ListBox>
+        <br />
+        <br />
         <br />
         <asp:Label ID="Label3" runat="server" Text="Edad"></asp:Label>
         <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
