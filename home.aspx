@@ -26,6 +26,7 @@
         <br />
         <asp:Label ID="Label3" runat="server" Text="Edad"></asp:Label>
         <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+        <asp:ListBox ID="ListBox3" runat="server"></asp:ListBox>
         <br />
         <br />
         <asp:Button ID="Button_insert" runat="server" OnClick="Button_insert_Click" 

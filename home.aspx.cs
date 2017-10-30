@@ -21,7 +21,7 @@ public partial class home : System.Web.UI.Page
         con.Open();
         cmd.CommandText = "insert into clientes(nombre,apellido,edad) values('" + TextBox1.Text + "','" + TextBox2.Text + "','" + TextBox3.Text + "')";
         cmd.ExecuteNonQuery();
-        cmd.Clone();
+        con.Close();
         MessageBox.Show("cliente agregado!!!", " Gracias");
         TextBox1.Text = "";
         TextBox2.Text = "";
@@ -34,6 +34,10 @@ public partial class home : System.Web.UI.Page
     //metodos
     public void cargarLista() {
 
+        ListBox1.Items.Clear();
+        ListBox2.Items.Clear();
+        ListBox3.Items.Clear();
+
         con.Open();
         cmd.CommandText = "select * from clientes";
         //data reader
@@ -41,10 +45,15 @@ public partial class home : System.Web.UI.Page
 
         if (dr.HasRows) {
             while (dr.Read()) {
-                ListBox1.Items.Add(dr[0].ToString());
-                ListBox2.Items.Add(dr[1].ToString());
+                ListBox1.Items.Add(dr[1].ToString());
+                ListBox2.Items.Add(dr[2].ToString());
+                ListBox3.Items.Add(dr[3].ToString());
             }
         }
         con.Close();
     }    
+
+
+
+
 }
