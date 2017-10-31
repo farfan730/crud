@@ -10,18 +10,18 @@
     <form id="form1" runat="server">
     <div>
     
-        Registrate<br />
+        Registrate <br />
         <br />
         <asp:Label ID="Label1" runat="server" Text="Nombre"></asp:Label>
         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-        <asp:ListBox ID="ListBox1" runat="server"></asp:ListBox>
-        <br />
+        <asp:ListBox ID="ListBox1" runat="server" OnSelectedIndexChanged="ListBox1_SelectedIndexChanged"></asp:ListBox>
+&nbsp;<br />
         <br />
         <br />
         <asp:Label ID="Label2" runat="server" Text="Apellido"></asp:Label>
         <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
         <asp:ListBox ID="ListBox2" runat="server"></asp:ListBox>
-        <br />
+&nbsp;<br />
         <br />
         <br />
         <asp:Label ID="Label3" runat="server" Text="Edad"></asp:Label>
@@ -30,7 +30,11 @@
         <br />
         <br />
         <asp:Button ID="Button_insert" runat="server" OnClick="Button_insert_Click" 
-            Text="Insert" />
+            Text="Insertar" />
+    
+        <br />
+        <br />
+        <asp:Button ID="Button1" runat="server" Text="Eliminar" />
     
     </div>
     </form>

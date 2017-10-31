@@ -14,6 +14,7 @@ public partial class home : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         cmd.Connection = con;
+        cargarLista();
     }
 
     protected void Button_insert_Click(object sender, EventArgs e)
@@ -51,9 +52,14 @@ public partial class home : System.Web.UI.Page
             }
         }
         con.Close();
-    }    
+    }
 
-
-
-
+    protected void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        ListBox l = sender as ListBox;
+        if (l.SelectedIndex != -1) {
+            ListBox1.SelectedIndex = l.SelectedIndex;
+            Label1.Text = ListBox1.SelectedItem.ToString();
+        }
+    }
 }
