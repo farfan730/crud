@@ -54,12 +54,45 @@ public partial class home : System.Web.UI.Page
         con.Close();
     }
 
+    /*
     protected void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
     {
         ListBox l = sender as ListBox;
         if (l.SelectedIndex != -1) {
             ListBox1.SelectedIndex = l.SelectedIndex;
-            Label1.Text = ListBox1.SelectedItem.ToString();
+            TextBox1.Text = ListBox1.SelectedItem.ToString();
         }
     }
+
+    */
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        if (TextBox1.Text != "" & TextBox2.Text != "") {
+            con.Open();
+            cmd.CommandText = "delete from clientes where nombre='" + TextBox1.Text + "' or apellido='" + TextBox2.Text + "'";
+            cmd.ExecuteNonQuery();
+            con.Close();
+            MessageBox.Show("se elimino", "gracias");
+            cargarLista();
+            TextBox1.Text = "";
+            TextBox2.Text = "";
+        }
+    }
+
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+      
+            con.Open();
+            cmd.CommandText = "UPDATE clientes SET nombre='" + TextBox1.Text + "', apellido='" + TextBox2.Text + "', edad='" + TextBox3.Text + "' Where [edad] = '" + TextBox3.Text + "'";
+            cmd.ExecuteNonQuery();
+            con.Close();
+            MessageBox.Show("se actualizo", "gracias");
+            cargarLista();
+            TextBox1.Text = "";
+            TextBox2.Text = "";
+            TextBox3.Text = "";
+    }
+
+   
 }

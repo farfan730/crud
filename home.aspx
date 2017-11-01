@@ -14,7 +14,7 @@
         <br />
         <asp:Label ID="Label1" runat="server" Text="Nombre"></asp:Label>
         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-        <asp:ListBox ID="ListBox1" runat="server" OnSelectedIndexChanged="ListBox1_SelectedIndexChanged"></asp:ListBox>
+        <asp:ListBox ID="ListBox1" runat="server"></asp:ListBox>
 &nbsp;<br />
         <br />
         <br />
@@ -34,7 +34,11 @@
     
         <br />
         <br />
-        <asp:Button ID="Button1" runat="server" Text="Eliminar" />
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Eliminar" />
+    
+        <br />
+        <br />
+        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Actualizar" />
     
     </div>
     </form>
